@@ -38,12 +38,7 @@ public class VendingMachine {
     }
 
     public void selectColaProduct(){
-        if(getTotalAcceptedCoins() == Product.cola.getPrice()
-                || getTotalAcceptedCoins() > Product.cola.getPrice()) {
-            display = "THANK YOU";
-        }else {
-            display = "PRICE "+String.format("$%.02f",Product.cola.getPrice());
-        }
+        selectProduct(Product.cola);
     }
 
     public void dispenseColaProduct(){
@@ -55,12 +50,7 @@ public class VendingMachine {
     }
 
     public void selectChipsProduct(){
-        if(getTotalAcceptedCoins() == Product.chips.getPrice()
-                || getTotalAcceptedCoins() > Product.chips.getPrice()) {
-            display = "THANK YOU";
-        }else {
-            display = "PRICE "+String.format("$%.02f",Product.chips.getPrice());
-        }
+        selectProduct(Product.chips);
     }
 
     public void dispenseChipsProduct(){
@@ -68,6 +58,15 @@ public class VendingMachine {
             display = String.format("$%.02f", getTotalAcceptedCoins() - Product.chips.getPrice());;
         }else {
             display = "INSERT COIN";
+        }
+    }
+
+    public void selectProduct(Product product){
+        if(getTotalAcceptedCoins() == product.getPrice()
+                || getTotalAcceptedCoins() > product.getPrice()) {
+            display = "THANK YOU";
+        }else {
+            display = "PRICE "+String.format("$%.02f",product.getPrice());
         }
     }
 }
