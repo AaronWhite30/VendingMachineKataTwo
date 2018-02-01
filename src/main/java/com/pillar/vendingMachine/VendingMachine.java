@@ -7,6 +7,7 @@ public class VendingMachine {
 
     private String display;
     private List<Coin> acceptedCoins = new ArrayList<Coin>();
+    private List<Product> colaProducts = new ArrayList<Product>();
     private CoinValueService coinValueService;
 
     public VendingMachine(){
@@ -38,7 +39,11 @@ public class VendingMachine {
     }
 
     public void selectColaProduct(){
-        selectProduct(Product.cola);
+        if(colaProducts.size() == 0){
+            display = "SOLD OUT";
+        }else {
+            selectProduct(Product.cola);
+        }
     }
 
     public void dispenseColaProduct(){
