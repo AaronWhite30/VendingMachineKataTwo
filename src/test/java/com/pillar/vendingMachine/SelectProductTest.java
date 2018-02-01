@@ -1,14 +1,21 @@
 package com.pillar.vendingMachine;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class SelectProductTest {
 
+    private VendingMachine vendingMachine;
+
+    @Before
+    public void setup(){
+        this.vendingMachine = new VendingMachine();
+    }
+
     @Test
     public void givenSelectColaAndNotEnoughMoneyDisplayShowsColaPrice(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectColaProduct();
         assertEquals("PRICE $1.00", vendingMachine.getDisplay());
@@ -16,7 +23,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectColaAndEnoughMoneyDisplayShowsThankYouDispensesProductThenShowsInsertCoin(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
@@ -29,7 +35,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectColaAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmount(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
@@ -43,7 +48,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectChipsAndNotEnoughMoneyDisplayShowsChipsPrice(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectChipsProduct();
         assertEquals("PRICE $0.50", vendingMachine.getDisplay());
@@ -51,7 +55,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectChipsAndEnoughMoneyDisplayShowsThankYouDispensesProductThenShowsInsertCoin(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectChipsProduct();
@@ -62,7 +65,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectChipsAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmount(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.nickel);
@@ -74,7 +76,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectCandyAndNotEnoughMoneyDisplayShowsCandyPrice(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectCandyProduct();
         assertEquals("PRICE $0.65", vendingMachine.getDisplay());
@@ -82,7 +83,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectCandyAndEnoughMoneyDisplayShowsThankYouDispensesProductThenShowsInsertCoin(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.dime);
@@ -95,7 +95,6 @@ public class SelectProductTest {
 
     @Test
     public void givenSelectCandyAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmount(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.dime);
