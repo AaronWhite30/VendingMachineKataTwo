@@ -39,7 +39,11 @@ public class VendingMachine {
     }
 
     public void selectColaProduct(){
-        selectProduct(Product.cola);
+        if(colaProducts.size() == 0){
+            display = "SOLD OUT";
+        }else {
+            selectProduct(Product.cola);
+        }
     }
 
     public void dispenseColaProduct(){
