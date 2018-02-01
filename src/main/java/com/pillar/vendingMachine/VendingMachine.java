@@ -38,10 +38,10 @@ public class VendingMachine {
     }
 
     public void selectColaProduct(){
-        if(getTotalAcceptedCoins() == 1.00f){
+        if(getTotalAcceptedCoins() == Product.cola.getPrice()){
             display = "THANK YOU";
         }else {
-            display = "PRICE $1.00";
+            display = "PRICE "+String.format("$%.02f",Product.cola.getPrice());
         }
     }
 }
