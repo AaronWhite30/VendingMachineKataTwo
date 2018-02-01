@@ -53,4 +53,8 @@ public class VendingMachine {
             display = "INSERT COIN";
         }
     }
+
+    public void selectChipsProduct(){
+        display = "PRICE $0.50";
+    }
 }
