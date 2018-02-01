@@ -32,4 +32,8 @@ public class VendingMachine {
         }
         return total;
     }
+
+    public void returnCoins(){
+        display = "INSERT COIN";
+    }
 }
