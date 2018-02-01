@@ -8,6 +8,10 @@ public class VendingMachine {
     private String display;
     private List<Coin> acceptedCoins = new ArrayList<Coin>();
 
+    public VendingMachine(){
+        display = "INSERT COIN";
+    }
+
     public String getDisplay(){
         return display;
     }
@@ -16,8 +20,6 @@ public class VendingMachine {
         if(coin != Coin.penny){
             acceptedCoins.add(coin);
             display = String.format("$%.02f", getTotalAcceptedCoins());
-        }else {
-            display = "INSERT COIN";
         }
     }
 
