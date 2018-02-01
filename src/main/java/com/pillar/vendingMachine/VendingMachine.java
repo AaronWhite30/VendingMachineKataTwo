@@ -38,6 +38,10 @@ public class VendingMachine {
     }
 
     public void selectColaProduct(){
-        display = "PRICE $1.00";
+        if(getTotalAcceptedCoins() == 1.00f){
+            display = "THANK YOU";
+        }else {
+            display = "PRICE $1.00";
+        }
     }
 }
