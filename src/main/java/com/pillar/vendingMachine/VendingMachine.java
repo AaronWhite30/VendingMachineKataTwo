@@ -36,4 +36,8 @@ public class VendingMachine {
     public void returnCoins(){
         display = "INSERT COIN";
     }
+
+    public void selectColaProduct(){
+        display = "PRICE $1.00";
+    }
 }
