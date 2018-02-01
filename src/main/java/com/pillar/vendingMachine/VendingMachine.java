@@ -59,7 +59,7 @@ public class VendingMachine {
                 || getTotalAcceptedCoins() > Product.chips.getPrice()) {
             display = "THANK YOU";
         }else {
-            display = "PRICE $0.50";
+            display = "PRICE "+String.format("$%.02f",Product.chips.getPrice());
         }
     }
 
