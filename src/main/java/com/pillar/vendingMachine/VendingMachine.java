@@ -30,6 +30,8 @@ public class VendingMachine {
                 total = total + 0.25f;
             }else if(coin.getCoinSize() == 2 && coin.getCoinWeight() == 2){
                 total = total + 0.05f;
+            }else if(coin.getCoinSize() == 1 && coin.getCoinWeight() == 1){
+                total = total + 0.10f;
             }
         }
         return total;

@@ -30,6 +30,7 @@ public class AcceptCoinTest {
     public void givenValidCoinsInsertedDisplayShowAccumulatedAmount(){
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.nickel);
-        assertEquals("$0.30", vendingMachine.getDisplay());
+        vendingMachine.insertCoin(Coin.dime);
+        assertEquals("$0.40", vendingMachine.getDisplay());
     }
 }
