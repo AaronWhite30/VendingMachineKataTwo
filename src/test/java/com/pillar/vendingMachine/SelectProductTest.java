@@ -71,4 +71,39 @@ public class SelectProductTest {
         vendingMachine.dispenseChipsProduct();
         assertEquals("$0.05", vendingMachine.getDisplay());
     }
+
+    @Test
+    public void givenSelectCandyAndNotEnoughMoneyDisplayShowsCandyPrice(){
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.insertCoin(Coin.quarter);
+        vendingMachine.selectCandyProduct();
+        assertEquals("PRICE $0.65", vendingMachine.getDisplay());
+    }
+
+    @Test
+    public void givenSelectCandyAndEnoughMoneyDisplayShowsThankYouDispensesProductThenShowsInsertCoin(){
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.insertCoin(Coin.quarter);
+        vendingMachine.insertCoin(Coin.quarter);
+        vendingMachine.insertCoin(Coin.dime);
+        vendingMachine.insertCoin(Coin.nickel);
+        vendingMachine.selectCandyProduct();
+        assertEquals("THANK YOU", vendingMachine.getDisplay());
+        vendingMachine.dispenseColaProduct();
+        assertEquals("INSERT COIN", vendingMachine.getDisplay());
+    }
+
+    @Test
+    public void givenSelectCandyAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmount(){
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.insertCoin(Coin.quarter);
+        vendingMachine.insertCoin(Coin.quarter);
+        vendingMachine.insertCoin(Coin.dime);
+        vendingMachine.insertCoin(Coin.nickel);
+        vendingMachine.insertCoin(Coin.nickel);
+        vendingMachine.selectCandyProduct();
+        assertEquals("THANK YOU", vendingMachine.getDisplay());
+        vendingMachine.dispenseCandyProduct();
+        assertEquals("$0.05", vendingMachine.getDisplay());
+    }
 }

@@ -53,6 +53,14 @@ public class VendingMachine {
         dispenseProduct(Product.chips);
     }
 
+    public void selectCandyProduct(){
+        selectProduct(Product.candy);
+    }
+
+    public void dispenseCandyProduct(){
+        dispenseProduct(Product.candy);
+    }
+
     public void selectProduct(Product product){
         if(getTotalAcceptedCoins() == product.getPrice()
                 || getTotalAcceptedCoins() > product.getPrice()) {
