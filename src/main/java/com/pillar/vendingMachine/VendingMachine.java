@@ -7,9 +7,11 @@ public class VendingMachine {
 
     private String display;
     private List<Coin> acceptedCoins = new ArrayList<Coin>();
+    private CoinValueService coinValueService;
 
     public VendingMachine(){
         display = "INSERT COIN";
+        coinValueService = new CoinValueService();
     }
 
     public String getDisplay(){
@@ -26,13 +28,7 @@ public class VendingMachine {
     private float getTotalAcceptedCoins(){
         float total = 0;
         for (Coin coin : acceptedCoins) {
-            if(coin.getCoinSize() == 3 && coin.getCoinWeight() == 3){
-                total = total + 0.25f;
-            }else if(coin.getCoinSize() == 2 && coin.getCoinWeight() == 2){
-                total = total + 0.05f;
-            }else if(coin.getCoinSize() == 1 && coin.getCoinWeight() == 1){
-                total = total + 0.10f;
-            }
+            total = total + coinValueService.getCoinValue(coin);
         }
         return total;
     }
