@@ -55,7 +55,8 @@ public class VendingMachine {
     }
 
     public void selectChipsProduct(){
-        if(getTotalAcceptedCoins() == Product.chips.getPrice()) {
+        if(getTotalAcceptedCoins() == Product.chips.getPrice()
+                || getTotalAcceptedCoins() > Product.chips.getPrice()) {
             display = "THANK YOU";
         }else {
             display = "PRICE $0.50";
