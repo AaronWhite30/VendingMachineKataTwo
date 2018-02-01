@@ -23,7 +23,7 @@ public class SelectProductTest {
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectColaProduct();
         assertEquals("THANK YOU", vendingMachine.getDisplay());
-        vendingMachine.dispenseProduct();
+        vendingMachine.dispenseColaProduct();
         assertEquals("INSERT COIN", vendingMachine.getDisplay());
     }
 
@@ -37,7 +37,7 @@ public class SelectProductTest {
         vendingMachine.insertCoin(Coin.dime);
         vendingMachine.selectColaProduct();
         assertEquals("THANK YOU", vendingMachine.getDisplay());
-        vendingMachine.dispenseProduct();
+        vendingMachine.dispenseColaProduct();
         assertEquals("$0.10", vendingMachine.getDisplay());
     }
 }

@@ -47,7 +47,7 @@ public class VendingMachine {
         }
     }
 
-    public void dispenseProduct(){
+    public void dispenseColaProduct(){
         if(getTotalAcceptedCoins() > Product.cola.getPrice()){
             display = "$0.10";
         }else {
