@@ -1,21 +1,27 @@
 package com.pillar.vendingMachine;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class AcceptCoinTest {
 
+    private VendingMachine vendingMachine;
+
+    @Before
+    public void setup(){
+        this.vendingMachine = new VendingMachine();
+    }
+
     @Test
     public void givenInvalidCoinInsertedDisplayIsInsertCoin(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.penny);
         assertEquals("INSERT COIN", vendingMachine.getDisplay());
     }
 
     @Test
     public void givenValidCoinIsInsertedDisplayShowsAmount(){
-        VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(Coin.quarter);
         assertEquals("$0.25", vendingMachine.getDisplay());
     }
