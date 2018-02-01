@@ -64,6 +64,10 @@ public class VendingMachine {
     }
 
     public void dispenseChipsProduct(){
-        display = "INSERT COIN";
+        if(getTotalAcceptedCoins() > Product.chips.getPrice()){
+            display = "$0.05";
+        }else {
+            display = "INSERT COIN";
+        }
     }
 }
