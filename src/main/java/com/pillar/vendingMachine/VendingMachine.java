@@ -9,6 +9,10 @@ public class VendingMachine {
     }
 
     public void insertCoin(Coin coin){
-        display = "INSERT COIN";
+        if(coin != Coin.penny){
+            display = "$0.25";
+        }else {
+            display = "INSERT COIN";
+        }
     }
 }
