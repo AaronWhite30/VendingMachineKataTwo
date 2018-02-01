@@ -48,7 +48,7 @@ public class VendingMachine {
 
     public void dispenseColaProduct(){
         if(getTotalAcceptedCoins() > Product.cola.getPrice()){
-            display = "$0.10";
+            display = String.format("$%.02f", getTotalAcceptedCoins() - Product.cola.getPrice());
         }else {
             display = "INSERT COIN";
         }
