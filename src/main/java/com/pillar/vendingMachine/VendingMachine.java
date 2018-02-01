@@ -44,4 +44,8 @@ public class VendingMachine {
             display = "PRICE "+String.format("$%.02f",Product.cola.getPrice());
         }
     }
+
+    public void dispenseProduct(){
+        display = "INSERT COIN";
+    }
 }
