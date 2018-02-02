@@ -87,4 +87,8 @@ public class VendingMachine {
     public void clearColaProducts(){
         colaProducts.clear();
     }
+
+    public void colaProductSoldOut(){
+        display = "INSERT COIN";
+    }
 }
