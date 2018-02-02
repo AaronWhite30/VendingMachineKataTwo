@@ -9,6 +9,7 @@ public class SoldOutTest {
     @Test
     public void givenNoMoneyAndColaProductSelectedDisplayShowsSoldOut(){
         VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.clearColaProducts();
         vendingMachine.selectColaProduct();
         assertEquals("SOLD OUT", vendingMachine.getDisplay());
     }

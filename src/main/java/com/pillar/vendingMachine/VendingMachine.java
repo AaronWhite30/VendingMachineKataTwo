@@ -13,6 +13,7 @@ public class VendingMachine {
     public VendingMachine(){
         display = "INSERT COIN";
         coinValueService = new CoinValueService();
+        colaProducts.add(Product.cola);
     }
 
     public String getDisplay(){
@@ -81,5 +82,9 @@ public class VendingMachine {
         }else {
             display = "INSERT COIN";
         }
+    }
+
+    public void clearColaProducts(){
+        colaProducts.clear();
     }
 }
