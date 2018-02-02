@@ -15,4 +15,13 @@ public class SoldOutTest {
         vendingMachine.colaProductSoldOut();
         assertEquals("INSERT COIN", vendingMachine.getDisplay());
     }
+
+    @Test
+    public void givenMoneyAndColaProductSelectedDisplayShowsSoldOut(){
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.clearColaProducts();
+        vendingMachine.insertCoin(Coin.dime);
+        vendingMachine.selectColaProduct();
+        assertEquals("SOLD OUT", vendingMachine.getDisplay());
+    }
 }
