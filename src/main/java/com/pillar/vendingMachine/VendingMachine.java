@@ -108,7 +108,7 @@ public class VendingMachine {
 
     public void chipsProductSoldOut(){
         if(acceptedCoins.size() > 0){
-            display = "$0.05";
+            display = String.format("$%.02f", getTotalAcceptedCoins());
         }else {
             display = "INSERT COIN";
         }
