@@ -49,10 +49,12 @@ public class SoldOutTest {
     }
 
     @Test
-    public void givenNoMoneyAndCandyProductSelectedDisplayShowsSoldOut(){
+    public void givenNoMoneyAndCandyProductSelectedDisplayShowsSoldOutThenShowsInsertCoin(){
         VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.clearCandyProducts();
         vendingMachine.selectCandyProduct();
         assertEquals("SOLD OUT", vendingMachine.getDisplay());
+        vendingMachine.candyProductSoldOut();
+        assertEquals("INSERT COIN", vendingMachine.getDisplay());
     }
 }

@@ -123,4 +123,8 @@ public class VendingMachine {
     public void clearCandyProducts(){
         candyProducts.clear();
     }
+
+    public void candyProductSoldOut(){
+        display = "INSERT COIN";
+    }
 }
