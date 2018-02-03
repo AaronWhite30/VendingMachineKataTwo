@@ -35,6 +35,15 @@ public class SoldOutTest {
         vendingMachine.selectChipsProduct();
         assertEquals("SOLD OUT", vendingMachine.getDisplay());
         vendingMachine.chipsProductSoldOut();
-        assertEquals("INSERT COIN", vendingMachine.getDisplay());
+        assertEquals("$0.05", vendingMachine.getDisplay());
+    }
+
+    @Test
+    public void givenMoneyAndChipsProductSelectedDisplayShowsSoldOut(){
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.clearChipsProducts();
+        vendingMachine.insertCoin(Coin.nickel);
+        vendingMachine.selectChipsProduct();
+        assertEquals("SOLD OUT", vendingMachine.getDisplay());
     }
 }

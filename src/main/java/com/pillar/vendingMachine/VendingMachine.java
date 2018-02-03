@@ -107,6 +107,10 @@ public class VendingMachine {
     }
 
     public void chipsProductSoldOut(){
-        display = "INSERT COIN";
+        if(acceptedCoins.size() > 0){
+            display = "$0.05";
+        }else {
+            display = "INSERT COIN";
+        }
     }
 }
