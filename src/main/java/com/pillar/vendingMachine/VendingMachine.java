@@ -107,6 +107,6 @@ public class VendingMachine {
     }
 
     public void chipProductSoldOut(){
-        display = "$0.05";
+        display = "$0.15";
     }
 }
