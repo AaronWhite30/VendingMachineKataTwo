@@ -105,4 +105,8 @@ public class VendingMachine {
     public void clearChipsProducts(){
         chipProducts.clear();
     }
+
+    public void chipProductSoldOut(){
+        display = "$0.05";
+    }
 }
