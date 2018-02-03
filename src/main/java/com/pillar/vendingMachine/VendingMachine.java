@@ -125,6 +125,10 @@ public class VendingMachine {
     }
 
     public void candyProductSoldOut(){
-        display = "INSERT COIN";
+        if(acceptedCoins.size() > 0){
+            display = "$0.10";
+        }else {
+            display = "INSERT COIN";
+        }
     }
 }
