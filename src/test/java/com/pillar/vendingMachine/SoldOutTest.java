@@ -38,7 +38,7 @@ public class SoldOutTest {
     }
 
     @Test
-    public void givenMoneyAndChipsProductSelectedDisplayShowsSoldOut(){
+    public void givenMoneyAndChipsProductSelectedDisplayShowsSoldOutThenShowsRemainingAmount(){
         VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.clearChipsProducts();
         vendingMachine.insertCoin(Coin.nickel);
