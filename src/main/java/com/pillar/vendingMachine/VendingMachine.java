@@ -101,11 +101,7 @@ public class VendingMachine {
     }
 
     public void colaProductSoldOut(){
-        if(acceptedCoins.size() > 0){
-            display = String.format("$%.02f", getTotalAcceptedCoins());
-        }else {
-            display = "INSERT COIN";
-        }
+        productSoldOut();
     }
 
     public void clearChipsProducts(){
@@ -113,11 +109,7 @@ public class VendingMachine {
     }
 
     public void chipsProductSoldOut(){
-        if(acceptedCoins.size() > 0){
-            display = String.format("$%.02f", getTotalAcceptedCoins());
-        }else {
-            display = "INSERT COIN";
-        }
+        productSoldOut();
     }
 
     public void clearCandyProducts(){
@@ -125,6 +117,10 @@ public class VendingMachine {
     }
 
     public void candyProductSoldOut(){
+        productSoldOut();
+    }
+
+    public void productSoldOut(){
         if(acceptedCoins.size() > 0){
             display = String.format("$%.02f", getTotalAcceptedCoins());
         }else {
