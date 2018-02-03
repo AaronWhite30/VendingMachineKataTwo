@@ -28,10 +28,13 @@ public class SoldOutTest {
     }
 
     @Test
-    public void givenNoMoneyAndChipsProductSelectedDisplayShowsSoldOut(){
+    public void givenNoMoneyAndChipsProductSelectedDisplayShowsSoldOutThenShowsInsertCoin(){
         VendingMachine vendingMachine = new VendingMachine();
         vendingMachine.clearChipsProducts();
+        vendingMachine.insertCoin(Coin.nickel);
         vendingMachine.selectChipsProduct();
         assertEquals("SOLD OUT", vendingMachine.getDisplay());
+        vendingMachine.chipsProductSoldOut();
+        assertEquals("INSERT COIN", vendingMachine.getDisplay());
     }
 }

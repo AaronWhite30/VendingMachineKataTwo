@@ -105,4 +105,8 @@ public class VendingMachine {
     public void clearChipsProducts(){
         chipsProducts.clear();
     }
+
+    public void chipsProductSoldOut(){
+        display = "INSERT COIN";
+    }
 }
