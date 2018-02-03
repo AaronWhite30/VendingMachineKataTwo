@@ -9,6 +9,7 @@ public class VendingMachine {
     private List<Coin> acceptedCoins = new ArrayList<Coin>();
     private List<Product> colaProducts = new ArrayList<Product>();
     private List<Product> chipsProducts = new ArrayList<Product>();
+    private List<Product> candyProducts = new ArrayList<Product>();
     private CoinValueService coinValueService;
 
     public VendingMachine(){
@@ -16,6 +17,7 @@ public class VendingMachine {
         coinValueService = new CoinValueService();
         colaProducts.add(Product.cola);
         chipsProducts.add(Product.chips);
+        candyProducts.add(Product.candy);
     }
 
     public String getDisplay(){
@@ -58,7 +60,11 @@ public class VendingMachine {
     }
 
     public void selectCandyProduct(){
-        selectProduct(Product.candy);
+        if(candyProducts.size() == 0){
+            display = "SOLD OUT";
+        }else {
+            selectProduct(Product.candy);
+        }
     }
 
     public void dispenseCandyProduct(){
@@ -112,5 +118,9 @@ public class VendingMachine {
         }else {
             display = "INSERT COIN";
         }
+    }
+
+    public void clearCandyProducts(){
+        candyProducts.clear();
     }
 }
