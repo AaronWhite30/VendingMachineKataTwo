@@ -126,7 +126,7 @@ public class VendingMachine {
 
     public void candyProductSoldOut(){
         if(acceptedCoins.size() > 0){
-            display = "$0.10";
+            display = String.format("$%.02f", getTotalAcceptedCoins());
         }else {
             display = "INSERT COIN";
         }
