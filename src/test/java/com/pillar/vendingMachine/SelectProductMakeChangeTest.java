@@ -79,10 +79,11 @@ public class SelectProductMakeChangeTest {
     }
 
     @Test
-    public void givenSelectCandyAndNotEnoughMoneyDisplayShowsCandyPrice(){
+    public void givenSelectCandyAndNotEnoughMoneyDisplayShowsCandyPriceAndVerifiesNoChangeIsGiven(){
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectCandyProduct();
         assertEquals("PRICE $0.65", vendingMachine.getDisplay());
+        assertEquals("0.00", vendingMachine.getChangeInCoinReturn());
     }
 
     @Test
