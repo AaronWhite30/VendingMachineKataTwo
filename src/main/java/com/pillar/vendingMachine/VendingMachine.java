@@ -17,12 +17,10 @@ public class VendingMachine {
     public VendingMachine(float moneyToLoad){
         moneyInMachine = moneyToLoad;
         initialize();
-        initializeDisplay();
     }
 
     public VendingMachine(){
         initialize();
-        initializeDisplay();
     }
 
     private void initialize(){
@@ -30,6 +28,7 @@ public class VendingMachine {
         colaProducts.add(Product.cola);
         chipsProducts.add(Product.chips);
         candyProducts.add(Product.candy);
+        initializeDisplay();
     }
 
     private void initializeDisplay(){
