@@ -106,5 +106,6 @@ public class SelectProductMakeChangeTest {
         assertEquals("THANK YOU", vendingMachine.getDisplay());
         vendingMachine.dispenseCandyProduct();
         assertEquals("$0.05", vendingMachine.getDisplay());
+        assertEquals("0.05", vendingMachine.getChangeInCoinReturn());
     }
 }
