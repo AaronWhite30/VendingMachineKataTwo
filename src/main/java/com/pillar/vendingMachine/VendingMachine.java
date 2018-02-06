@@ -16,13 +16,11 @@ public class VendingMachine {
 
     public VendingMachine(float moneyToLoad){
         moneyInMachine = moneyToLoad;
-        if(moneyInMachine == 0f){
-            display = "EXACT CHANGE ONLY";
-        }
         coinValueService = new CoinValueService();
         colaProducts.add(Product.cola);
         chipsProducts.add(Product.chips);
         candyProducts.add(Product.candy);
+        initializeDisplay();
     }
 
     public VendingMachine(){
@@ -30,6 +28,12 @@ public class VendingMachine {
         colaProducts.add(Product.cola);
         chipsProducts.add(Product.chips);
         candyProducts.add(Product.candy);
+    }
+
+    private void initializeDisplay(){
+        if(moneyInMachine == 0f){
+            display = "EXACT CHANGE ONLY";
+        }
     }
 
     public String getDisplay(){
