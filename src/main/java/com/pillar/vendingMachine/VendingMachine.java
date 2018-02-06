@@ -1,12 +1,14 @@
 package com.pillar.vendingMachine;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class VendingMachine {
 
     private String display;
     private List<Coin> acceptedCoins = new ArrayList<Coin>();
+    private float changeReturned = 0f;
     private List<Product> colaProducts = new ArrayList<Product>();
     private List<Product> chipsProducts = new ArrayList<Product>();
     private List<Product> candyProducts = new ArrayList<Product>();
@@ -83,6 +85,9 @@ public class VendingMachine {
         if(getTotalAcceptedCoins() == product.getPrice()
                 || getTotalAcceptedCoins() > product.getPrice()) {
             display = "THANK YOU";
+            if(getTotalAcceptedCoins() > product.getPrice()){
+                changeReturned = getTotalAcceptedCoins() - product.getPrice();
+            }
         }else {
             display = "PRICE "+String.format("$%.02f",product.getPrice());
         }
@@ -129,6 +134,6 @@ public class VendingMachine {
     }
 
     public String getChangeInCoinReturn(){
-        return String.format("%.02f",0.10f);
+        return String.format("%.02f",changeReturned);
     }
 }
