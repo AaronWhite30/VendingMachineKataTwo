@@ -84,11 +84,15 @@ public class VendingMachine {
         if(getTotalAcceptedCoins() == product.getPrice()
                 || getTotalAcceptedCoins() > product.getPrice()) {
             display = "THANK YOU";
-            if(getTotalAcceptedCoins() > product.getPrice()){
-                changeReturned = getTotalAcceptedCoins() - product.getPrice();
-            }
+            processChangeReturn(product);
         }else {
             display = "PRICE "+String.format("$%.02f",product.getPrice());
+        }
+    }
+
+    private void processChangeReturn(Product product){
+        if(getTotalAcceptedCoins() > product.getPrice()){
+            changeReturned = getTotalAcceptedCoins() - product.getPrice();
         }
     }
 
