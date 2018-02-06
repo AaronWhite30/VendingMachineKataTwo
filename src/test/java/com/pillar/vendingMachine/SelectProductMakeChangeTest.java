@@ -58,13 +58,14 @@ public class SelectProductMakeChangeTest {
     }
 
     @Test
-    public void givenSelectChipsAndEnoughMoneyDisplayShowsThankYouDispensesProductThenShowsInsertCoin(){
+    public void givenSelectChipsAndEnoughMoneyDisplayShowsThankYouDispensesProductThenShowsInsertCoinAndVerifiesNoChangeIsGiven(){
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectChipsProduct();
         assertEquals("THANK YOU", vendingMachine.getDisplay());
         vendingMachine.dispenseChipsProduct();
         assertEquals("INSERT COIN", vendingMachine.getDisplay());
+        assertEquals("0.00", vendingMachine.getChangeInCoinReturn());
     }
 
     @Test
