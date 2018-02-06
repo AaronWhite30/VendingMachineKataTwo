@@ -5,7 +5,7 @@ import java.util.List;
 
 public class VendingMachine {
 
-    private String display = "INSERT COIN";
+    private String display;
     private List<Coin> acceptedCoins = new ArrayList<Coin>();
     private float changeReturned = 0f;
     private float moneyInMachine = 0f;
@@ -22,6 +22,7 @@ public class VendingMachine {
 
     public VendingMachine(){
         initialize();
+        initializeDisplay();
     }
 
     private void initialize(){
@@ -34,6 +35,8 @@ public class VendingMachine {
     private void initializeDisplay(){
         if(moneyInMachine == 0f){
             display = "EXACT CHANGE ONLY";
+        }else{
+            display = "INSERT COIN";
         }
     }
 

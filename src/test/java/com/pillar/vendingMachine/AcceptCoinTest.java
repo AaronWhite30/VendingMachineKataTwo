@@ -16,6 +16,7 @@ public class AcceptCoinTest {
 
     @Test
     public void givenInvalidCoinInsertedDisplayIsInsertCoin(){
+        VendingMachine vendingMachine = new VendingMachine(1.00f);
         vendingMachine.insertCoin(Coin.penny);
         assertEquals("INSERT COIN", vendingMachine.getDisplay());
     }
