@@ -65,7 +65,7 @@ public class SelectProductMakeChangeTest {
     }
 
     @Test
-    public void givenSelectChipsAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmount(){
+    public void givenSelectChipsAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmountThenDispensesChange(){
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.nickel);
@@ -73,6 +73,7 @@ public class SelectProductMakeChangeTest {
         assertEquals("THANK YOU", vendingMachine.getDisplay());
         vendingMachine.dispenseChipsProduct();
         assertEquals("$0.05", vendingMachine.getDisplay());
+        assertEquals("0.05", vendingMachine.getChangeInCoinReturn());
     }
 
     @Test
