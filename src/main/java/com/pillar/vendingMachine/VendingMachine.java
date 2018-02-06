@@ -16,14 +16,15 @@ public class VendingMachine {
 
     public VendingMachine(float moneyToLoad){
         moneyInMachine = moneyToLoad;
-        coinValueService = new CoinValueService();
-        colaProducts.add(Product.cola);
-        chipsProducts.add(Product.chips);
-        candyProducts.add(Product.candy);
+        initialize();
         initializeDisplay();
     }
 
     public VendingMachine(){
+        initialize();
+    }
+
+    private void initialize(){
         coinValueService = new CoinValueService();
         colaProducts.add(Product.cola);
         chipsProducts.add(Product.chips);
