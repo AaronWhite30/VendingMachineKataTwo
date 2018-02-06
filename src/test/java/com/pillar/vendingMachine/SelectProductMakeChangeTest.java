@@ -15,10 +15,11 @@ public class SelectProductMakeChangeTest {
     }
 
     @Test
-    public void givenSelectColaAndNotEnoughMoneyDisplayShowsColaPrice(){
+    public void givenSelectColaAndNotEnoughMoneyDisplayShowsColaPriceAndVerifiesNoChangeIsGiven(){
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.selectColaProduct();
         assertEquals("PRICE $1.00", vendingMachine.getDisplay());
+        assertEquals("0.00", vendingMachine.getChangeInCoinReturn());
     }
 
     @Test
