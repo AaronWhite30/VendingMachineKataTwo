@@ -8,13 +8,18 @@ public class VendingMachine {
     private String display;
     private List<Coin> acceptedCoins = new ArrayList<Coin>();
     private float changeReturned = 0f;
+    private float moneyInMachine = 0f;
     private List<Product> colaProducts = new ArrayList<Product>();
     private List<Product> chipsProducts = new ArrayList<Product>();
     private List<Product> candyProducts = new ArrayList<Product>();
     private CoinValueService coinValueService;
 
     public VendingMachine(){
-        display = "INSERT COIN";
+        if(moneyInMachine == 0f){
+            display = "EXACT CHANGE ONLY";
+        }else {
+            display = "INSERT COIN";
+        }
         coinValueService = new CoinValueService();
         colaProducts.add(Product.cola);
         chipsProducts.add(Product.chips);
