@@ -34,7 +34,7 @@ public class SelectProductTest {
     }
 
     @Test
-    public void givenSelectColaAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmount(){
+    public void givenSelectColaAndTooMuchMoneyDisplayShowsThankYouDispensesProductThenShowsRemainingAmountThenDispensesChange(){
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
         vendingMachine.insertCoin(Coin.quarter);
@@ -44,6 +44,7 @@ public class SelectProductTest {
         assertEquals("THANK YOU", vendingMachine.getDisplay());
         vendingMachine.dispenseColaProduct();
         assertEquals("$0.10", vendingMachine.getDisplay());
+        assertEquals("0.10", vendingMachine.getChangeInCoinReturn());
     }
 
     @Test

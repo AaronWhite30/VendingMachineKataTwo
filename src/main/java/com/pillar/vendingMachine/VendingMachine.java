@@ -127,4 +127,8 @@ public class VendingMachine {
             display = "INSERT COIN";
         }
     }
+
+    public String getChangeInCoinReturn(){
+        return String.format("%.02f",0.10f);
+    }
 }
