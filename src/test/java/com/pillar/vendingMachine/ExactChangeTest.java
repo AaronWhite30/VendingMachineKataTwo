@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class ExactChangeTest {
 
     @Test
-    public void givenNoMoneyInMachineDisplayShowsExactChangeForColaWhenLessThanOneDollarInMoneyInMachine(){
+    public void givenNoMoneyInMachineDisplayShowsExactChangeInsteadOfInsertCoin(){
         VendingMachine vendingMachine = new VendingMachine(0f);
         assertEquals("EXACT CHANGE ONLY", vendingMachine.getDisplay());
     }
